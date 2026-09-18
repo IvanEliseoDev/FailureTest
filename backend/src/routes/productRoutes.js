@@ -7,8 +7,8 @@ import {
   updateProduct,
   deleteProductByBarcode,
   updateProductByBarcode,
-  getallProducts,
   updateVariantStock,
+  getAllProducts,
 } from "../controllers/productController.js";
 
 const router = Router();
@@ -16,7 +16,7 @@ const router = Router();
 router.route("/").get(getProducts).post(createProduct);
 router.delete("/barcode/:barcode", deleteProductByBarcode);
 router.put("/barcode/:barcode", updateProductByBarcode);
-router.route("/allProducts").get(getallProducts);
+router.route("/allProducts").get(getAllProducts);
 router.put("/:productId/variant-stock", updateVariantStock);
 router
   .route("/:id")
